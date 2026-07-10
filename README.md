@@ -1,141 +1,119 @@
-````markdown
 # 🚗 Car Selling Price Prediction using Machine Learning
 
-A complete Machine Learning project that predicts the **selling price of used cars** using multiple regression algorithms. The project includes **Exploratory Data Analysis (EDA), Data Preprocessing, Feature Engineering, Model Training, Hyperparameter Tuning, Model Evaluation, and Prediction**.
+A Machine Learning project that predicts the **selling price of used cars** using various regression algorithms. The project covers the complete ML workflow including **data preprocessing, exploratory data analysis (EDA), feature engineering, model training, hyperparameter tuning, and model evaluation**.
 
 ---
 
-# 📌 Project Overview
+## 📌 Project Overview
 
-The price of a used car depends on several factors such as:
+Estimating the resale value of a used car is a common regression problem. The selling price depends on multiple factors such as:
 
 - Manufacturing Year
 - Present Market Price
 - Kilometers Driven
 - Fuel Type
 - Seller Type
-- Transmission
+- Transmission Type
 - Number of Previous Owners
 
-This project builds and compares several Machine Learning regression models to accurately estimate the selling price of a used vehicle.
+This project compares multiple machine learning algorithms to identify the model that predicts car prices with the highest accuracy.
 
 ---
 
-# 📂 Dataset
+## 📂 Dataset
 
-**Dataset Source**
+**Source:** Vehicle Dataset from CarDekho
 
-Vehicle Dataset from CarDekho
+### Dataset Statistics
 
-Dataset contains **301 car records** with **9 features**.
+| Property | Value |
+|----------|------:|
+| Original Samples | 301 |
+| Samples after Outlier Removal | 276 |
+| Features | 9 |
+| Missing Values | 0 |
 
-After removing outliers using the **IQR Method**, the dataset contains:
-
-- **276 samples**
-
----
-
-# 📊 Features
+### Features
 
 | Feature | Description |
 |----------|-------------|
-| Car_Name | Name of the Car |
-| Year | Manufacturing Year |
-| Present_Price | Current Ex-showroom Price (Lakhs) |
-| Kms_Driven | Distance Driven (KM) |
+| Car_Name | Name of the car |
+| Year | Manufacturing year |
+| Present_Price | Current showroom price (Lakhs) |
+| Kms_Driven | Total kilometers driven |
 | Fuel_Type | Petrol / Diesel / CNG |
 | Seller_Type | Dealer / Individual |
 | Transmission | Manual / Automatic |
-| Owner | Number of Previous Owners |
-| Selling_Price | Target Variable |
+| Owner | Number of previous owners |
+| Selling_Price | Target variable |
 
 ---
 
-# 🧹 Data Preprocessing
+## 🛠 Data Preprocessing
 
 The following preprocessing steps were performed:
 
-- Checked missing values
-- Verified data types
-- Statistical summary
-- Removed outliers using the IQR Method
-- Label Encoding for categorical variables
+- Missing value analysis
+- Data type verification
+- Exploratory data analysis
+- Outlier removal using the IQR Method
+- Label Encoding of categorical variables
 - Feature Scaling using StandardScaler
-- Train-Test Split (80:20)
+- Train-Test Split (80% Training, 20% Testing)
 
 ---
 
-# 📈 Exploratory Data Analysis (EDA)
+## 📊 Exploratory Data Analysis
 
-Several visualizations were created to understand the dataset.
+The project includes multiple visualizations to understand the dataset.
 
-### Numerical Feature Distribution
+### Numerical Analysis
 
-- Year
-- Selling Price
-- Present Price
-- Kilometers Driven
-- Owner
+- Distribution of numerical features
+- Correlation Heatmap
+- Outlier Detection
 
-### Categorical Feature Distribution
+### Categorical Analysis
 
-- Fuel Type
-- Seller Type
-- Transmission
+- Fuel Type Distribution
+- Seller Type Distribution
+- Transmission Distribution
 
-### Scatter Plots
+### Relationship Analysis
 
 - Year vs Selling Price
 - Present Price vs Selling Price
 - Kilometers Driven vs Selling Price
-
-### Box Plots
-
-- Selling Price
-- Present Price
-- Kilometers Driven
 - Fuel Type vs Selling Price
 - Transmission vs Selling Price
 
-### Correlation Heatmap
+---
 
-Relationship between all numerical features.
+## 🤖 Machine Learning Models
+
+The following regression models were trained and evaluated.
+
+| Model |
+|--------|
+| Linear Regression |
+| Polynomial Regression |
+| Decision Tree Regressor |
+| Random Forest Regressor |
+| Gradient Boosting Regressor |
+| Support Vector Regressor (SVR) |
+| XGBoost Regressor |
+
+Hyperparameter tuning was performed using **GridSearchCV** for applicable models.
 
 ---
 
-# ⚙️ Machine Learning Models Used
-
-The following regression algorithms were trained and compared.
-
-1. Linear Regression
-2. Polynomial Regression
-3. Decision Tree Regressor
-4. Random Forest Regressor
-5. Gradient Boosting Regressor
-6. Support Vector Regressor (SVR)
-7. XGBoost Regressor
-
-Hyperparameter tuning was performed using **GridSearchCV** wherever applicable.
-
----
-
-# 📏 Evaluation Metrics
-
-Models were evaluated using:
-
-- R² Score
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-
----
-
-# 🏆 Model Performance
+## 📈 Model Performance
 
 | Model | R² Score | MAE | RMSE |
-|--------|---------:|---------:|---------:|
-| **XGBoost Regressor** | **0.9605** | **0.3832** | **0.5844** |
-| Gradient Boosting Regressor | 0.9590 | 0.3904 | 0.5957 |
-| Random Forest Regressor | 0.9412 | 0.4381 | 0.7132 |
+|------|---------:|---------:|---------:|
+| 🥇 XGBoost Regressor | **0.9605** | **0.3832** | **0.5844** |
+| 🥈 Gradient Boosting Regressor | 0.9590 | 0.3904 | 0.5957 |
+| 🥉 Random Forest Regressor | 0.9412 | 0.4381 | 0.7132 |
 | Polynomial Regression (Degree 2) | 0.9335 | 0.5052 | 0.7581 |
 | Support Vector Regressor | 0.9214 | 0.5386 | 0.8244 |
 | Decision Tree Regressor | 0.8738 | 0.6164 | 1.0447 |
@@ -143,29 +121,29 @@ Models were evaluated using:
 
 ---
 
-# 🥇 Best Model
+## 🏆 Best Performing Model
 
-The **XGBoost Regressor** achieved the highest performance.
+### XGBoost Regressor
 
-### Performance
+| Metric | Score |
+|--------|-------:|
+| R² Score | **0.9605** |
+| Mean Absolute Error | **0.3832** |
+| Root Mean Squared Error | **0.5844** |
 
-- **R² Score:** 0.9605
-- **MAE:** 0.3832
-- **RMSE:** 0.5844
-
-This model was selected as the final prediction model.
+The XGBoost Regressor achieved the highest prediction accuracy and was selected as the final model.
 
 ---
 
-# 🔍 Sample Prediction
+## 🔮 Sample Prediction
 
 ### Input
 
 | Feature | Value |
-|---------|------|
+|----------|------:|
 | Year | 2014 |
 | Present Price | 5.59 |
-| Kms Driven | 27000 |
+| Kilometers Driven | 27000 |
 | Fuel Type | Petrol |
 | Seller Type | Dealer |
 | Transmission | Manual |
@@ -177,24 +155,24 @@ This model was selected as the final prediction model.
 
 ---
 
-# 📊 Generated Visualizations
+## 📸 Generated Visualizations
 
-The project generates the following plots:
+The project generates several visualizations including:
 
 - Distribution Histograms
 - Count Plots
 - Scatter Plots
 - Box Plots
 - Correlation Heatmap
-- Actual vs Predicted Price Graph
+- Actual vs Predicted Price Comparison
 
-All graphs are exported into the **graphs/** directory.
+Example outputs are stored inside the **graphs/** directory.
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
-```
+```text
 Car-Price-Prediction/
 │
 ├── graphs/
@@ -209,13 +187,12 @@ Car-Price-Prediction/
 │
 ├── Car_Price_Prediction.ipynb
 ├── requirements.txt
-├── README.md
-└── graphs.zip
+└── README.md
 ```
 
 ---
 
-# 🛠 Technologies Used
+## ⚙️ Technologies Used
 
 - Python
 - Pandas
@@ -229,13 +206,17 @@ Car-Price-Prediction/
 
 ---
 
-# 🚀 Installation
+## 🚀 Installation
 
 Clone the repository
 
 ```bash
 git clone https://github.com/your-username/car-price-prediction.git
+```
 
+Move into the project directory
+
+```bash
 cd car-price-prediction
 ```
 
@@ -251,13 +232,13 @@ Run the notebook
 jupyter notebook
 ```
 
-or open in **Google Colab**.
+Or open the notebook directly in **Google Colab**.
 
 ---
 
-# 📦 Requirements
+## 📦 Required Libraries
 
-```
+```text
 pandas
 numpy
 matplotlib
@@ -270,46 +251,47 @@ kagglehub
 
 ---
 
-# 📈 Future Improvements
+## 🚀 Future Improvements
 
-- Deploy the model using Flask or FastAPI
-- Build a Streamlit web application
+- Deploy using Streamlit
+- Build a Flask/FastAPI REST API
+- Add CatBoost and LightGBM models
+- Implement SHAP Explainability
 - Perform Feature Selection
-- Use CatBoost and LightGBM
-- Apply Cross Validation for more robust evaluation
-- Add SHAP Explainability
-- Hyperparameter optimization using Optuna
-- Model deployment on Render or Hugging Face Spaces
+- Use Optuna for Hyperparameter Optimization
+- Deploy on Render or Hugging Face Spaces
 
 ---
 
-# 📚 Learning Outcomes
+## 🎯 Learning Outcomes
 
 This project demonstrates:
 
 - Data Cleaning
+- Data Visualization
 - Exploratory Data Analysis
-- Feature Engineering
 - Outlier Detection
-- Feature Scaling
+- Feature Engineering
 - Label Encoding
-- Multiple Regression Algorithms
+- Feature Scaling
+- Regression Algorithms
 - Hyperparameter Tuning
 - Model Comparison
-- Performance Evaluation
-- Real-world Price Prediction
+- Model Evaluation
+- Machine Learning Deployment Preparation
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Anik Paul**
 
-B.Tech CSE Student
+B.Tech Computer Science Engineering Student
 
-Machine Learning | AI | Data Science | Full Stack Developer
+Interested in **Machine Learning, Artificial Intelligence, Data Science, and Full-Stack Development**.
 
 ---
 
-## ⭐ If you found this project helpful, consider giving it a Star!
-````
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
